@@ -1,0 +1,11 @@
+# Fragmento para ~/.grok/config.toml o para .grok/config.toml de un proyecto.
+# La contraseña no va aquí: vive en MAIL_ENV_FILE, fuera del repositorio.
+# Ajusta las dos rutas a tu máquina.
+
+[mcp_servers.cpanel-mail]
+command = "node"
+args = ["C:/ruta/al/proyecto/dist/index.js"]
+startup_timeout_sec = 30
+
+[mcp_servers.cpanel-mail.env]
+MAIL_ENV_FILE = "C:/Users/tu-usuario/.config/cpanel-mail.env"

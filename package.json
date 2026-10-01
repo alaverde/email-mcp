@@ -1,0 +1,40 @@
+{
+  "name": "cpanel-mail-mcp",
+  "version": "0.1.0",
+  "description": "Servidor MCP para leer y organizar el correo de cPanel por IMAP, y enviarlo por SMTP si se habilita.",
+  "license": "MIT",
+  "keywords": ["mcp", "imap", "smtp", "cpanel", "email"],
+  "type": "module",
+  "bin": {
+    "cpanel-mail-mcp": "./bin/cpanel-mail-mcp.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && node --test scripts/text.test.mjs scripts/smoke-mcp.mjs",
+    "prepare": "tsc"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.31.0",
+    "imapflow": "^1.2.13",
+    "mailparser": "^3.9.8",
+    "nodemailer": "^10.0.13",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/mailparser": "^3.4.6",
+    "@types/node": "^24.6.2",
+    "typescript": "^5.9.3"
+  }
+}
